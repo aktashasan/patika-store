@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class MobilePhone extends Product{
     private static int pId=1;
@@ -35,6 +36,7 @@ public class MobilePhone extends Product{
         if(value==3) deleteItem();
         if(value==5) brandFilter();
     }
+
 
     @Override
     public void addItem() {
@@ -92,7 +94,11 @@ public class MobilePhone extends Product{
         getProducts();
         System.out.print("Silinmesini istediğiniz telefonun Id numarasını giriniz : ");
         int id=scanner.nextInt();
-        phones.remove(id-1);                          //Listede tutulduğu için id 1 ile başlar ama 0. indexte tutulur.
+        Optional<MobilePhone> stuff = phones.stream()
+                .filter(x->x.getId()==id)
+                .findFirst();
+        System.out.println("Siliniyor...\nid : "+id);
+        stuff.ifPresent(phone->phones.remove(phone));           //Listede tutulan id numarasına göre listeden silinir.
         System.out.println("Güncel telefon listesi ");
         getProducts();
     }
@@ -104,7 +110,7 @@ public class MobilePhone extends Product{
         ArrayList<MobilePhone> filterPhones=new ArrayList<>();      //Boş bir liste oluşturulur.
         for (MobilePhone n:phones){                                 //MobilePhone listesi dönülür.
             if(filter.equals(n.getBrand().getName())){              //Verilen değerle eşitse
-                filterPhones.add(n);                                //boş listeye bütün özellikler eklenir.
+                filterPhones.add(n);                                //boş listeye ürünler bütün özellikler ile birlikte eklenir.
             }
         }
         print(filterPhones);            //Girilen ürün markasının bütün ürünleri özellikleriyle listelenir.

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Optional;
 
 public class Notebook extends Product{
     private static int nId=1;
@@ -81,7 +82,11 @@ public class Notebook extends Product{
         getProducts();
         System.out.print("Silinmesini istediğiniz notebook'un Id numarasını giriniz : ");
         int id=scanner.nextInt();
-        notebooks.remove(id-1);     //Listede tutulduğu için id 1 ile başlar ama 0. indexte tutulur.
+        Optional<Notebook> stuff = notebooks.stream()
+                .filter(x->x.getId()==id)
+                .findFirst();
+        System.out.println("Siliniyor...\nid: "+id);
+        stuff.ifPresent(notebook->notebooks.remove(notebook));           //Listede tutulan id numarasına göre listeden silinir.
         System.out.println("Güncel notebook listesi ");
         getProducts();
     }
@@ -93,7 +98,7 @@ public class Notebook extends Product{
         ArrayList<Notebook> filterNotebooks=new ArrayList<>();      //Boş bir liste oluşturulur.
         for (Notebook n:notebooks){                                 //Notebook listesi dönülür.
             if(filter.equals(n.getBrand().getName())){              //Girilen string ile listedeki eşitse
-                filterNotebooks.add(n);                              //boş listeye bütün özellikler eklenir.
+                filterNotebooks.add(n);                              //boş listeye ürünler bütün özellikler ile birlikte eklenir.
             }
         }
         print(filterNotebooks);         //Girilen ürün markasının bütün ürünleri özellikleriyle listelenir.
