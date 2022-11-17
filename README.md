@@ -16,7 +16,7 @@ Projeyi klonlayın
   
 ## Ekran Görüntüleri
 
-![Menu]https://github.com/aktashasan/patika-store/blob/main/Screenshot/Screenshot%202022-11-17%20133923.png)
+![Menu](https://github.com/aktashasan/patika-store/blob/main/Screenshot/Screenshot%202022-11-17%20133923.png)
 ![Islem-Menu](https://github.com/aktashasan/patika-store/blob/main/Screenshot/Screenshot%202022-11-17%20133942.png)
 ![Urun-ekleme](https://github.com/aktashasan/patika-store/blob/main/Screenshot/Screenshot%202022-11-17%20134010.png)
 ![Urun-listeleme](https://github.com/aktashasan/patika-store/blob/main/Screenshot/Screenshot%202022-11-17%20135942.png)
