@@ -3,6 +3,31 @@
 Bu proje bir console uygulamasıdır. bu projede kullanıcı bir ürünü
  ekleyebilir,Kullanıcı ürünlerin benzersiz numaralarına ve markalarına 
  göre filtreleyip listeleyebilir, benzersiz numaralarına göre silebilir.
+ 
+ ## Cep Telefonu ürünlerinin nitelikleri :
+
+- id: Ürünün sistemde kayıtlı benzersiz numarası
+- price: Birim fiyatı
+- discount: İndirim oranı
+- amount: Stok miktarı
+- name: Ürün adı
+- brand: Marka bilgisi (Sistemde ekli olan markalar kullanılacaktır)
+- memory: Telefonun hafıza bilgisi (128 GB, 64 GB)
+- screenSize: Ekran Boyutu (6.1 Inc)
+- baterry: Pil Gücü (4000)
+- ram: RAM (6 GB)
+
+## Notebook ürünlerinin nitelikleri :
+
+- id: Ürünün sistemde kayıtlı benzersiz numarası
+- price: Birim fiyatı
+- discount: İndirim oranı
+- amount: Stok miktarı
+- name: Ürün adı
+- brand: Marka bilgisi (Sistemde ekli olan markalar kullanılacaktır)
+- memory: Depolama (512 SSD)
+- screenSize: Ekran Boyutu (14 inç)
+- ram: Ram (8 GB)
   
 ## Bilgisayarınıza indirin
 
@@ -11,8 +36,6 @@ Projeyi klonlayın
 ```bash
   git clone https://github.com/aktashasan/patika-store
 ```
-
-
   
 ## Ekran Görüntüleri
 
